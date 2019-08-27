@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <title>Drag_Example</title>
+    <link rel="stylesheet" href="./css/dragula.css">
+
+    <style>
+        body {
+            background-color: #942A57;
+            margin: 0 auto;
+            margin-top: 10px;
+            width: 760px;
+        }
+
+        html,
+        body {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            -webkit-box-sizing: inherit;
+            -moz-box-sizing: inherit;
+            box-sizing: inherit;
+        }
+
+        body,
+        input,
+        button {
+            font-family: Georgia, Helvetica;
+            font-size: 17px;
+            color: #ecf0f1;
+        }
+
+        a {
+            font-weight: bold;
+        }
+
+        a,
+        a:hover {
+            color: #ecf0f1;
+        }
+
+        p {
+            margin: 0;
+            text-align: center;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .dragArea {
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 10px 0;
+            padding: 10px;
+            height: 290px;
+            font-size: 0;
+        }
+
+        .dragArea .dragBolck {
+            font-size: 16px;
+            display: inline-block;
+            vertical-align: middle;
+            background-color: rgba(255, 255, 255, 0.2);
+            width: 50%;
+            height: 100%;
+            overflow: auto;
+        }
+
+        .dragArea .dragBolck .handle {
+            padding: 0 5px;
+            margin-right: 5px;
+            background-color: rgba(0, 0, 0, 0.4);
+            cursor: move;
+        }
+
+        .dragArea .dragBolck::-webkit-scrollbar {
+            /*外层轨道*/
+            width: 8px;
+            height: 2px;
+            background: #ccc;
+            border-radius: 10px;
+
+        }
+
+        .dragArea .dragBolck::-webkit-scrollbar-thumb {
+            /*内层轨道*/
+            display: block;
+            width: 6px;
+            margin: 0 auto;
+            border-radius: 10px;
+            background: rgb(253, 5, 67);
+        }
+
+        .dragArea .dragBolck:nth-child(odd) {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .dragArea .dragBolck>div {
+            margin: 10px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.2);
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        .dragArea .dragBolck>div {
+            cursor: move;
+            cursor: grab;
+            cursor: -moz-grab;
+            cursor: -webkit-grab;
+        }
+
+        .dragArea .dragBolck .ex-moved {
+            background-color: #e74c3c;
+        }
+
+        .dragArea .dragBolck .ex-over {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        @media only screen and (min-width: 320px) and (max-width: 960px) {}
+    </style>
+
+</head>
+
+<body>
+
+    <p>1.停留在经过的区域</p>
+    <div class='dragArea'>
+        <div id='left-events' class='dragBolck'>
+            <div id="proc-10">10. 一 As soon as you start dragging an</div>
+            <div id="proc-11">11. 二 Whenever an element is cloned</div>
+            <div id="proc-12">12. 三 The element would be dropped is</div>
+            <div id="proc-13">13. 四 an element is dropped anywhere</div>
+        </div>
+        <div id='right-events' class='dragBolck'>
+            <!-- <div data-id="1">As soon as you start dragging an element</div> -->
+            <!-- <div data-id="2">ends in a cancellation, removal, or drop</div> -->
+        </div>
+    </div>
+
+    <p>2.只在拖拽容器内有效, 移出容器会回到原点</p>
+    <div class='dragArea'>
+        <div id='left-rollbacks' class='dragBolck'>
+            <div>Moving items between dragAreas works</div>
+            <div>If you try to drop an item outside of any</div>
+            <div>When that happens be raised</div>
+        </div>
+        <div id='right-rollbacks' class='dragBolck'>
+            <div>Note that the dragged element will go</div>
+            <div>This is useful if you want to ensure drop</div>
+        </div>
+    </div>
+
+    <p>3.溢出拖拽容器,会移除节点</p>
+    <div class='dragArea'>
+        <div id='left-rm-spill' class='dragBolck'>
+            <div>Anxious Cab Driver</div>
+            <div>Thriving Venture</div>
+            <div>Such a good blog</a></div>
+            <div>Calm Clam</div>
+        </div>
+        <div id='right-rm-spill' class='dragBolck'>
+            <div>Banana Boat</div>
+            <div>Orange Juice</div>
+            <div>Cuban Cigar</div>
+            <div>Terrible Comedian</div>
+        </div>
+    </div>
+
+    <p>4.将拖拽的内容复制到容器中(双向复制)</p>
+    <div class='dragArea'>
+        <div id='left-copy' class='dragBolck'>
+            <div>When elements are copyable, they can't be</div>
+            <div>Copying prevents original elements from</div>
+            <div>Whenever that happens is raised</div>
+        </div>
+        <div id='right-copy' class='dragBolck'>
+            <div>Note that the clones get destroyed if they're</div>
+            <div>You'll be dragging a copy, so when they're</div>
+        </div>
+    </div>
+
+    <p>5.将拖拽的内容复制到容器中(单向复制)</p>
+    <div class='dragArea'>
+        <div id='left-copy-1tomany' class='dragBolck'>
+            <div>When elements are copyable, they can't be</div>
+            <div>Copying prevents original elements from </div>
+            <div>Whenever that happens is raised</div>
+            <div>Note that the clones get destroyed if</div>
+            <div>You'll be dragging a copy, so when they're </div>
+        </div>
+        <div id='right-copy-1tomany' class='dragBolck'>
+        </div>
+    </div>
+
+    <p>6.点击固定区域拖拽</p>
+    <div class='dragArea'>
+        <div id='left-lovehandles' class='dragBolck'>
+            <div><span class='handle'>+</span>Move me, but you can use the plus sign to</div>
+            <div><span class='handle'>+</span>Note that handler is just the original</div>
+        </div>
+        <div id='right-lovehandles' class='dragBolck'>
+            <div><span class='handle'>+</span>This might also be useful if you want</div>
+            <div><span class='handle'>+</span>You can also use the from a dragBolck</div>
+        </div>
+    </div>
+
+    <p>7.拖拽排序</p>
+    <div class='dragArea'>
+        <div id='sortable' class='dragBolck' style="width: 100%;">
+            <div>Clicking on these elements triggers a regular <code>click</code> event you can listen to.</div>
+            <div>Try dragging or clicking on this element.</div>
+            <div>Note how you can click normally?</div>
+            <div>Drags don't trigger click events.</div>
+            <div>Clicks don't end up in a drag, either.</div>
+            <div>This is useful if you have elements that can be both clicked or dragged.</div>
+        </div>
+    </div>
+
+    <script src="./../../extra/jquery/jquery.min.js"></script>
+    <script src="./js/dragula.min.js"></script>
+    <script>
+        window.onload = function () {
+            (function e(t, n, r) {
+                function s(o, u) {
+                    if (!n[o]) {
+                        if (!t[o]) {
+                            var a = typeof require == "function" && require;
+                            if (!u && a) return a(o, !0);
+                            if (i) return i(o, !0);
+                            var f = new Error("Cannot find module '" + o + "'");
+                            throw f.code = "MODULE_NOT_FOUND", f
+                        }
+                        var l = n[o] = {
+                            exports: {}
+                        };
+                        t[o][0].call(l.exports, function (e) {
+                            var n = t[o][1][e];
+                            return s(n ? n : e)
+                        }, l, l.exports, e, t, n, r)
+                    }
+                    return n[o].exports
+                }
+                var i = typeof require == "function" && require;
+                for (var o = 0; o < r.length; o++) s(r[o]);
+                return s
+            })({
+                1: [function (require, module, exports) {
+                    'use strict';
+
+                    // 0.默认用法
+                    dragula([$('left-defaults'), $('right-defaults')]);
+
+                    // var iTemplateId_v; // 拖动Dom的id
+
+                    var iOldNum_v; // 工序，拖动之前的个数
+                    var iNewNum_v; // 工序，拖动之后的个数
+                    var iSortId_v; // 工序，拖动后是工序的第几个
+                    var iProcId_v; // 当前操作节点的工序id
+
+                    var iOldSort_id; // 删除时选择的工序的第几个 or 排序时的sort_id
+
+                    // 1.停留在经过的区域
+                    dragula([$('left-events'), $('right-events')], {
+                            revertOnSpill: true, // 1.只在拖拽容器内有效, 移出容器会回到原点
+                            // removeOnSpill: true, // 2.溢出拖拽容器,会移除节点
+                            // copy: true, // 3.将拖拽的内容复制到容器中(双向复制)
+                        })
+                        .on('drag', function (el) {
+                            // console.log(jQuery(el));
+                            iOldNum_v = jQuery('#right-events').find("div").length;
+                            iOldSort_id = jQuery(el).prevAll('div').length + 1;
+                            console.log("iOldNum_v: " + iOldNum_v);
+                        })
+                        .on('drop', function (el) {
+                            // console.log(el);
+                            iNewNum_v = jQuery('#right-events').find("div").length;
+                            iSortId_v = jQuery(el).prevAll('div').length + 1;
+                            iProcId_v = parseInt(jQuery(el).attr("id").split("-")[1]);
+
+                            if (iOldNum_v > iNewNum_v) { // 删除操作时
+                                iSortId_v = iOldSort_id;
+                            }
+
+                            console.log("iNewNum_v: " + iNewNum_v);
+                            console.log("iSortId_v: " + iSortId_v);
+                            console.log("iOldSort_id: " + iOldSort_id);
+                            console.log("iProcId_v: " + iProcId_v);
+                            console.log(iOldNum_v + "," + iNewNum_v + "," + iSortId_v + "," +
+                                iOldSort_id + "," + iProcId_v + "," + "1010212");
+                            console.log("==================");
+                        })
+                        .on('over', function (el, dragBolck) {
+                            // console.log(jQuery('#left-events').find("div").length);
+                            // console.log(jQuery('#right-events').find("div").length);
+                            // console.log(el);
+                            // console.log(dragBolck);
+                            // dragBolck.className += ' ex-over';
+                        })
+                        .on('out', function (el, dragBolck) {
+                            // console.log(el);
+                            // dragBolck.className = dragBolck.className.replace('ex-over', '');
+                        });
+
+                    // 2.只在拖拽容器内有效, 移出容器会回到原点
+                    dragula([$('left-rollbacks'), $('right-rollbacks')], {
+                        revertOnSpill: true
+                    });
+
+                    // 3.溢出拖拽容器,会移除节点
+                    dragula([$('left-rm-spill'), $('right-rm-spill')], {
+                        removeOnSpill: true
+                    });
+
+                    // 4.将拖拽的内容复制到容器中(双向复制)
+                    dragula([$('left-copy'), $('right-copy')], {
+                        copy: true
+                    });
+
+                    // 5.将拖拽的内容复制到容器中(单向复制)
+                    dragula([$('left-copy-1tomany'), $('right-copy-1tomany')], {
+                        copy: function (el, source) {
+                            return source === $('left-copy-1tomany');
+                        },
+                        accepts: function (el, target) {
+                            return target !== $('left-copy-1tomany');
+                        }
+                    });
+
+                    // 6.点击固定区域拖拽
+                    dragula([$('left-lovehandles'), $('right-lovehandles')], {
+                        moves: function (el, dragBolck, handle) {
+                            return handle.classList.contains('handle');
+                        }
+                    });
+
+                    // 7.拖拽排序
+                    dragula([sortable]);
+
+                    function $(id) {
+                        return document.getElementById(id);
+                    }
+                }, {}],
+            }, {}, [1])
+        }
+    </script>
+</body>
+
+</html>

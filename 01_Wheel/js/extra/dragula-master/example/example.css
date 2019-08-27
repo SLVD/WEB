@@ -1,0 +1,79 @@
+body {
+  background-color: #942A57;
+  margin: 0 auto;
+  width: 760px;
+}
+
+html,
+body {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body,
+input,
+button {
+  font-family: Georgia, Helvetica;
+  font-size: 17px;
+  color: #ecf0f1;
+}
+
+a {
+  font-weight: bold;
+}
+
+a,
+a:hover {
+  color: #ecf0f1;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.dragArea {
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 50px 0;
+  padding: 20px;
+  height: 290px;
+  font-size: 0;
+}
+
+.dragBolck {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 50%;
+  height: 100%;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+.dragBolck:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.dragBolck>div {
+  margin: 10px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 0.4s ease-in-out;
+}
+
+.dragBolck>div {
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 960px) {}

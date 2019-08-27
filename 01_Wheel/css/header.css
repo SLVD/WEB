@@ -1,0 +1,62 @@
+
+header { padding: 4px 10px; background: #6b90e6; position: fixed; top: 0; left: 0; right: 0;}
+header>div { display: inline-block; vertical-align: top; font-size: 0;}
+header>div>div {font-size: 14px;}
+
+header .left>div { display: inline-block; vertical-align: top;}
+header .left .menu { width: 36px; height: 36px; margin: 6px 0; cursor: pointer; text-align: center;}
+header .left .menu .layui-icon { line-height: 36px; color: #ffffff; font-size: 24px;}
+header .left .txt { margin: 0 10px;}
+header .left .txt a { font-size: 22px; font-weight: 500; line-height: 48px; color: #ffffff;}
+
+header .right { float: right;}
+header .right>div { display: inline-block; vertical-align: top;}
+header .right .time { color: #ffffff; margin: 4px; line-height: 40px; padding: 0 8px;}
+header .right .menu { position: relative; z-index: 3;}
+header .right .menu .head { position: relative; background-color: #fff; border: 2px solid #ccc; z-index: 5; transition: all ease-in-out .3s;}
+header .right .menu .head .ico { float: left; width: 42px; height: 42px; margin: 1px; border: 0 solid transparent; cursor: pointer; overflow: hidden;}
+header .right .menu .head .ico img { width: 100%; height: 100%; vertical-align: top;}
+header .right .menu .head p { float: right; min-width: 56px; max-width: 80px; line-height: 44px; padding: 0 4px; text-align: center; font-size: 16px; cursor: pointer;}
+
+header .right .menu .dropdown { position: absolute; top: 0px; left: 2px; right: 2px; visibility: hidden; opacity: 0; z-index: 2; transition: all ease-in-out .3s;}
+header .right .menu:hover .head { background-color: #0cc; border-color: #fff; color: #fff;}
+header .right .menu:hover .dropdown { top: 48px; visibility: visible; opacity: 1;}
+header .right .menu .dropdown>i {display: block; height: 3px;}
+header .right .menu .dropdown>ul { background: #ffffff; border: 1px solid #ccc;}
+header .right .menu .dropdown>ul>li{ text-align: center; margin: 4px; padding: 0 2px; cursor: pointer;}
+header .right .menu .dropdown>ul>li:hover { background-color: #0cc; color: #ffffff;}
+
+html,body {height: 100%;}
+#container {height: 100%;}
+.main {padding-top: 58px; height: calc(100% - 58px); font-size: 0;}
+.main nav, .main article {display: inline-block; vertical-align: top; font-size: 14px;}
+
+nav { width: 180px; height: 100%; background: orange; overflow-y: auto;}
+nav ul>li { margin: 2px 0; background: #0cc; text-align: center; cursor: pointer;}
+nav ul>li>dl {display: none;}
+nav ul li>p { position: relative; padding: 2px 0; font-weight: 500; background: green; transition: all .3s;}
+nav ul li>p>.triangle { right: 10px;}
+nav ul li>p:hover { border-left: 3px solid red; color: #fff;} 
+nav ul li>dl>dd:hover {background: #6b90e6;} 
+
+article { background: pink; width: calc(100% - 180px); height: 100%;}
+
+
+.a { overflow: hidden; height: 0; padding-bottom: 50%; background: red; font-size: 0; text-align: center;}
+.aa { width: 25%; height: 0; padding-bottom: 25%; background: green; display: inline-block; vertical-align: top;}
+
+@media screen and (max-width:560px) {
+    header .right .time {
+        display: none;
+    }
+}
+
+@media(max-width:768px) {
+    nav {
+        z-index: 0;
+    }
+
+    article {
+        left: 0;
+    }
+}

@@ -1,0 +1,170 @@
+/* ================= layui-nav ================= */
+.layui-nav {
+    background-color: #ccc;
+}
+
+.layui-nav-tree {
+    width: 180px;
+    height: 100%;
+}
+
+.layui-nav-tree .layui-nav-item a {
+    height: 35px;
+    line-height: 35px;
+    margin-left: 5px;
+    color: #000000 !important;
+}
+
+.layui-nav-tree .layui-nav-item a:hover {
+    background: rgb(61, 241, 241);
+    color: #000 !important;
+}
+
+.layui-nav-tree .layui-this>a,
+.layui-nav-tree .layui-this>a:hover {
+    background-color: #00cccc !important;
+    color: #fff;
+}
+
+.layui-nav-itemed>.layui-nav-child {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.layui-nav-child dd a {
+    padding-left: 38px !important;
+}
+
+/* ================= layui-form ================= */
+.layui-input {
+    height: 24px;
+}
+
+.layui-form-item {
+    margin-bottom: 0;
+}
+
+.layui-list {
+    min-width: 240px;
+}
+
+.layui-form label {
+    padding: 0 8px;
+    line-height: 24px;
+    text-align: right;
+}
+
+.layui-form-select dl {
+    top: 26px;
+    padding: 2px 0;
+}
+
+.layui-form-select dl dd {
+    line-height: 24px;
+}
+
+.layui-form-item .layui-form-checkbox {
+    /* margin-top: 0; */
+}
+
+.layui-form-item .layui-form-checkbox[lay-skin="primary"] {
+    margin-top: 0;
+}
+
+.layui-form-label {
+    width: 100px;
+}
+
+.layui-input-block {
+    margin-left: 120px;
+}
+
+
+/* ================= btnArea ================= */
+.layui-tab {
+    margin: 0;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.layui-table-card-left {
+    width: 30px;
+}
+
+.layui-table-card-right {
+    width: calc(100% - 4px);
+}
+
+.layui-tab-title {
+    height: 28px;
+}
+
+.layui-tab-title li {
+    line-height: 28px;
+}
+
+.layui-tab-title .layui-this:after {
+    height: 28px;
+}
+
+.layui-tab-content {
+    padding: 0;
+}
+
+.layui-layer-iframe .layui-layer-btn,
+.layui-layer-page .layui-layer-btn {
+    padding-top: 4px !important;
+}
+
+.layui-layer-btn {
+    padding: 0 6px 6px !important;
+}
+
+/* ================= layui-tabl ================= */
+.layui-table-view .layui-table[lay-size=sm] .layui-table-cell {
+    height: 28px;
+    line-height: 28px;
+}
+
+.layui-table-cell {
+    padding: 0 10px;
+}
+
+.layui-tab-card>.layui-tab-title {
+    background-color: #f2f2f2;
+}
+
+.layui-table-view .layui-table td,
+.layui-table-view .layui-table th {
+    padding: 0;
+    height: 30px;
+    line-height: 30px;
+}
+
+
+.layui-table,
+.layui-table-view {
+    margin: 0;
+}
+
+/* ================= layui-switch ================= */
+.layui-form-switch {
+    border: 1px solid #53BEE6;
+    background-color: #53BEE6;
+    margin-top: 0;
+}
+
+.layui-form-onswitch {
+    border-color: #5FB878!important;
+    background-color: #5FB878!important;
+}
+
+.layui-form-switch em {
+    top: -1.3px;
+    color: #fff!important;
+}
+
+.layui-form-switch i {
+    top: 2px;
+    background-color: #fff;
+}
