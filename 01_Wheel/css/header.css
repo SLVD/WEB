@@ -1,5 +1,5 @@
 
-header { padding: 4px 10px; background: #6b90e6; position: fixed; top: 0; left: 0; right: 0;}
+header { padding: 4px 10px; background: #6b90e6; position: fixed; top: 0; left: 0; right: 0; z-index: 99}
 header>div { display: inline-block; vertical-align: top; font-size: 0;}
 header>div>div {font-size: 14px;}
 
